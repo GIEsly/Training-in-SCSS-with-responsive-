@@ -1,0 +1,218 @@
+$colors: (
+    1:blue,
+    1-light:lighten(blue, 40%),
+    2:green,
+    3:yellow,
+    4:orange,
+    5:red
+);
+
+@function color ($color-name){
+    @return map-get($colors,$color-name);
+}
+
+$tablet:699px;
+$desktop:799px;
+
+@mixin tablet {
+    @media(min-width: #{$tablet}){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media(min-width: #{$desktop}){
+        @content;
+    }
+}
+
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+
+    .bg {
+        clip-path: polygon(100% 0, 100% 84%, 56% 100%, 0 100%, 0 0);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: color(5);
+        z-index: -1;
+
+        @include tablet(){
+            background-color: color(1);
+        }
+
+        @include desktop(){
+            clip-path: polygon(0 0, 60% 0, 100% 100%, 0% 100%);
+            background-color: color(2);
+        }
+
+    }
+
+    header {
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-size: 1.3em;
+
+        @include tablet(){
+            text-align: left;
+            padding-left: 1.2rem;
+            font-size: 2.1em;
+        }
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+}
+
+main {
+
+    @include desktop(){
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-row: auto;
+        grid-template-areas: "upper-card down-card";
+    }
+
+    section.upper-card {
+        background: white;
+        margin: 0 1rem;
+        padding:.5rem;
+        border-radius: 1em;
+        box-shadow:
+        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.14),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.104),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.092),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.083),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.071),
+        100px 100px 80px rgba(0, 0, 0, 0.05);
+
+        @include desktop(){
+            grid-area: upper-card;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 1em;
+
+            li {
+                line-height: 1.5em;
+                font-size: 1rem;
+                text-transform: uppercase;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                line-height: 2em;
+                font-weight: bold;
+                margin: 0;
+                padding: 0;
+
+                span {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background-color: color(1-light);
+                    border-radius: 50%;
+                    margin-top: .3em;
+                }
+
+                strong {
+                    margin-left: 1.8em;
+
+                    @include tablet(){
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+
+    section.down-card {
+        text-align: center;
+        padding:.5em;
+        color: white;
+
+        @include desktop(){
+            grid-area: down-card;
+        }
+
+        @include desktop(){
+            color: black;
+        }
+
+        h1{
+            font-size: 2.7em;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 90%;
+            margin: auto;
+            margin-top: 1em;
+
+            @include tablet(){
+                text-align: left;
+                margin: 0;
+                padding: 0;
+                padding-top: .7em;
+                padding-left: .6em;
+            }
+
+        }
+
+        p{
+            padding:0 3em;
+            color:rgb(253, 253, 253);
+            margin-bottom: 2em;
+            line-height: 1.6em;
+
+            @include tablet(){
+                text-align: left;
+                font-size: 1.2em;
+                padding: 0;
+                margin: 0;
+                padding-left: 2rem;
+                padding-top: 1rem;
+                padding-bottom: 2rem;
+            }
+
+            @include desktop(){
+                color: black;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            background: color(3);
+            padding: .8em 2em;
+            border-radius: 2em;
+            font-weight: 900;
+            box-shadow:
+            2.8px 2.8px 2.2px rgba(0, 0, 0, 0.14),
+            6.7px 6.7px 5.3px rgba(0, 0, 0, 0.104),
+            12.5px 12.5px 10px rgba(0, 0, 0, 0.092),
+            22.3px 22.3px 17.9px rgba(0, 0, 0, 0.083),
+            41.8px 41.8px 33.4px rgba(0, 0, 0, 0.071),
+            100px 100px 80px rgba(0, 0, 0, 0.05)
+            ;
+            color:black;
+
+            &:hover {
+                background-color: color(4);
+                color: white;
+            }
+        }
+    }
+
+}
+
