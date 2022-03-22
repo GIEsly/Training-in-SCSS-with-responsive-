@@ -1,0 +1,196 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+body .bg {
+  -webkit-clip-path: polygon(100% 0, 100% 84%, 56% 100%, 0 100%, 0 0);
+          clip-path: polygon(100% 0, 100% 84%, 56% 100%, 0 100%, 0 0);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: red;
+  z-index: -1;
+}
+
+@media (min-width: 699px) {
+  body .bg {
+    background-color: blue;
+  }
+}
+
+@media (min-width: 799px) {
+  body .bg {
+    -webkit-clip-path: polygon(0 0, 60% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 60% 0, 100% 100%, 0% 100%);
+    background-color: green;
+  }
+}
+
+body header {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 1.3em;
+}
+
+@media (min-width: 699px) {
+  body header {
+    text-align: left;
+    padding-left: 1.2rem;
+    font-size: 2.1em;
+  }
+}
+
+body header a {
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+@media (min-width: 799px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% auto;
+        grid-template-columns: 50% auto;
+    grid-row: auto;
+        grid-template-areas: "upper-card down-card";
+  }
+}
+
+main section.upper-card {
+  background: white;
+  margin: 0 1rem;
+  padding: .5rem;
+  border-radius: 1em;
+  -webkit-box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.14), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.104), 12.5px 12.5px 10px rgba(0, 0, 0, 0.092), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.083), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.071), 100px 100px 80px rgba(0, 0, 0, 0.05);
+          box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.14), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.104), 12.5px 12.5px 10px rgba(0, 0, 0, 0.092), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.083), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.071), 100px 100px 80px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 799px) {
+  main section.upper-card {
+    grid-area: upper-card;
+  }
+}
+
+main section.upper-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+
+main section.upper-card ul li {
+  line-height: 1.5em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 2em;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+main section.upper-card ul li span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ccccff;
+  border-radius: 50%;
+  margin-top: .3em;
+}
+
+main section.upper-card ul li strong {
+  margin-left: 1.8em;
+}
+
+@media (min-width: 699px) {
+  main section.upper-card ul li strong {
+    font-size: 1.2em;
+  }
+}
+
+main section.down-card {
+  text-align: center;
+  padding: .5em;
+  color: white;
+}
+
+@media (min-width: 799px) {
+  main section.down-card {
+    grid-area: down-card;
+  }
+}
+
+@media (min-width: 799px) {
+  main section.down-card {
+    color: black;
+  }
+}
+
+main section.down-card h1 {
+  font-size: 2.7em;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 90%;
+  margin: auto;
+  margin-top: 1em;
+}
+
+@media (min-width: 699px) {
+  main section.down-card h1 {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    padding-top: .7em;
+    padding-left: .6em;
+  }
+}
+
+main section.down-card p {
+  padding: 0 3em;
+  color: #fdfdfd;
+  margin-bottom: 2em;
+  line-height: 1.6em;
+}
+
+@media (min-width: 699px) {
+  main section.down-card p {
+    text-align: left;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (min-width: 799px) {
+  main section.down-card p {
+    color: black;
+  }
+}
+
+main section.down-card a {
+  text-decoration: none;
+  text-transform: uppercase;
+  background: yellow;
+  padding: .8em 2em;
+  border-radius: 2em;
+  font-weight: 900;
+  -webkit-box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.14), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.104), 12.5px 12.5px 10px rgba(0, 0, 0, 0.092), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.083), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.071), 100px 100px 80px rgba(0, 0, 0, 0.05);
+          box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.14), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.104), 12.5px 12.5px 10px rgba(0, 0, 0, 0.092), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.083), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.071), 100px 100px 80px rgba(0, 0, 0, 0.05);
+  color: black;
+}
+
+main section.down-card a:hover {
+  background-color: orange;
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */
